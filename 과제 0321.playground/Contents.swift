@@ -1,8 +1,5 @@
 import UIKit
 
-<img width="483" alt="0321 1번 과제" src="https://user-images.githubusercontent.com/47776915/54794908-3aac9780-4c8d-11e9-8044-5265e6c280ab.png">
-![3121 2번 과제](https://user-images.githubusercontent.com/47776915/54794909-3aac9780-4c8d-11e9-8447-436db86e5c9b.png)
-
 //1. 첨부된 이미지를 보고 상속을 이용해 구현해보기
 
 class Animal{
