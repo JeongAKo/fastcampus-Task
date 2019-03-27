@@ -19,10 +19,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
+
     @IBAction func didTapButton(_ sender: Any) {
         let alertController = UIAlertController(title: "타이틀 ", message: "카운트 추가", preferredStyle: .actionSheet)
         
