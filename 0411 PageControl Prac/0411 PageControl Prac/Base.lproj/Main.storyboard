@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_411_PageControl_Prac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8Q-RZ-cG1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bT5-uj-API" userLabel="aView">
+                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="818"/>
+                                        <color key="backgroundColor" red="0.087123014032840729" green="0.42863544821739197" blue="0.72343665361404419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oA-CU-be8" userLabel="bView">
+                                        <rect key="frame" x="103.5" y="0.0" width="103.5" height="818"/>
+                                        <color key="backgroundColor" red="0.092741526663303375" green="0.5246812105178833" blue="0.37759125232696533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7D3-4f-AR4" userLabel="dView">
+                                        <rect key="frame" x="310.5" y="0.0" width="103.5" height="818"/>
+                                        <color key="backgroundColor" red="0.97635716199874878" green="0.85616070032119751" blue="0.037473831325769424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qe8-H6-YCb" userLabel="cView">
+                                        <rect key="frame" x="207" y="0.0" width="103.5" height="818"/>
+                                        <color key="backgroundColor" red="0.91965228319168091" green="0.22396597266197205" blue="0.34165912866592407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bT5-uj-API" firstAttribute="width" secondItem="c8Q-RZ-cG1" secondAttribute="width" multiplier="1/4" placeholder="YES" id="1vP-3h-24b"/>
+                                    <constraint firstAttribute="bottom" secondItem="bT5-uj-API" secondAttribute="bottom" id="1yC-eW-GZg"/>
+                                    <constraint firstAttribute="trailing" secondItem="7D3-4f-AR4" secondAttribute="trailing" id="6rq-HW-dGG"/>
+                                    <constraint firstItem="7D3-4f-AR4" firstAttribute="height" secondItem="qe8-H6-YCb" secondAttribute="height" id="83n-3e-R6M"/>
+                                    <constraint firstItem="7D3-4f-AR4" firstAttribute="leading" secondItem="qe8-H6-YCb" secondAttribute="trailing" id="9kF-Eb-Qqf"/>
+                                    <constraint firstAttribute="bottom" secondItem="6oA-CU-be8" secondAttribute="bottom" id="CmH-go-nUt"/>
+                                    <constraint firstItem="qe8-H6-YCb" firstAttribute="leading" secondItem="6oA-CU-be8" secondAttribute="trailing" id="FbX-hS-T1W"/>
+                                    <constraint firstAttribute="bottom" secondItem="7D3-4f-AR4" secondAttribute="bottom" id="I6g-k5-mAN"/>
+                                    <constraint firstItem="qe8-H6-YCb" firstAttribute="height" secondItem="6oA-CU-be8" secondAttribute="height" id="IbK-kL-YkM"/>
+                                    <constraint firstItem="6oA-CU-be8" firstAttribute="leading" secondItem="bT5-uj-API" secondAttribute="trailing" id="JPk-Xh-Wiw"/>
+                                    <constraint firstItem="6oA-CU-be8" firstAttribute="height" secondItem="c8Q-RZ-cG1" secondAttribute="height" id="M3L-7I-J17"/>
+                                    <constraint firstItem="bT5-uj-API" firstAttribute="top" secondItem="c8Q-RZ-cG1" secondAttribute="top" id="SGA-a6-QoP"/>
+                                    <constraint firstItem="bT5-uj-API" firstAttribute="height" secondItem="c8Q-RZ-cG1" secondAttribute="height" id="Vue-2L-UCz"/>
+                                    <constraint firstItem="6oA-CU-be8" firstAttribute="top" secondItem="c8Q-RZ-cG1" secondAttribute="top" id="Wka-Q9-pXN"/>
+                                    <constraint firstItem="6oA-CU-be8" firstAttribute="width" secondItem="bT5-uj-API" secondAttribute="width" id="WvO-3c-KO0"/>
+                                    <constraint firstAttribute="bottom" secondItem="7D3-4f-AR4" secondAttribute="bottom" id="Y6N-uA-UNz"/>
+                                    <constraint firstItem="7D3-4f-AR4" firstAttribute="width" secondItem="qe8-H6-YCb" secondAttribute="width" placeholder="YES" id="drx-jE-ZM5"/>
+                                    <constraint firstItem="qe8-H6-YCb" firstAttribute="width" secondItem="6oA-CU-be8" secondAttribute="width" placeholder="YES" id="gRg-NO-KgV"/>
+                                    <constraint firstItem="bT5-uj-API" firstAttribute="width" secondItem="c8Q-RZ-cG1" secondAttribute="width" priority="999" id="izG-pu-p0K"/>
+                                    <constraint firstItem="6oA-CU-be8" firstAttribute="width" secondItem="c8Q-RZ-cG1" secondAttribute="width" priority="999" id="j4G-dB-Vzc"/>
+                                    <constraint firstItem="bT5-uj-API" firstAttribute="leading" secondItem="c8Q-RZ-cG1" secondAttribute="leading" id="joa-fY-f85"/>
+                                    <constraint firstItem="qe8-H6-YCb" firstAttribute="top" secondItem="c8Q-RZ-cG1" secondAttribute="top" id="pQf-bu-PKA"/>
+                                    <constraint firstItem="7D3-4f-AR4" firstAttribute="leading" secondItem="qe8-H6-YCb" secondAttribute="trailing" id="tGO-8p-5Au"/>
+                                    <constraint firstItem="qe8-H6-YCb" firstAttribute="width" secondItem="c8Q-RZ-cG1" secondAttribute="width" priority="999" id="ujm-W4-QQ5"/>
+                                    <constraint firstItem="7D3-4f-AR4" firstAttribute="width" secondItem="c8Q-RZ-cG1" secondAttribute="width" priority="999" id="vlG-kw-CkD"/>
+                                    <constraint firstAttribute="bottom" secondItem="qe8-H6-YCb" secondAttribute="bottom" id="y4t-7N-eqq"/>
+                                    <constraint firstItem="7D3-4f-AR4" firstAttribute="top" secondItem="c8Q-RZ-cG1" secondAttribute="top" id="z25-tG-wqs"/>
+                                    <constraint firstItem="7D3-4f-AR4" firstAttribute="top" secondItem="c8Q-RZ-cG1" secondAttribute="top" id="zgq-FW-fns"/>
+                                </constraints>
+                            </scrollView>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Cqe-wd-8qD">
+                                <rect key="frame" x="179.5" y="800" width="55" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="c8Q-RZ-cG1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6QS-r0-8bB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c8Q-RZ-cG1" secondAttribute="trailing" id="DRR-hd-Aiu"/>
+                            <constraint firstItem="Cqe-wd-8qD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KVW-BF-I3p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c8Q-RZ-cG1" secondAttribute="bottom" id="UeC-HC-Igw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cqe-wd-8qD" secondAttribute="bottom" constant="25" id="VA0-CR-xBS"/>
+                            <constraint firstItem="c8Q-RZ-cG1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yj4-p9-ZB6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="Cqe-wd-8qD" id="MOW-Pi-9NF"/>
+                        <outlet property="scrollView" destination="c8Q-RZ-cG1" id="a3p-4S-fuu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="117.85714285714285"/>
+        </scene>
+    </scenes>
+</document>

@@ -42,7 +42,6 @@ class ViewController: UIViewController {
     
 
     @IBAction func unwindToFirstVC(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source
         guard let vc = unwindSegue.source as? SecondViewController else { return }
         dogCount += vc.count
         catCount += vc.count
