@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         greenView.bottomAnchor.constraint(equalTo: yellowView.topAnchor).isActive =  true
         greenView.widthAnchor.constraint(equalTo: redView.widthAnchor).isActive = true
         greenView.heightAnchor.constraint(equalTo: redView.heightAnchor).isActive = true
-        
+
         
         blueView.translatesAutoresizingMaskIntoConstraints = false
         blueView.topAnchor.constraint(equalTo: redView.bottomAnchor).isActive = true
