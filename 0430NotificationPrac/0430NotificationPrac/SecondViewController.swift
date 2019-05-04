@@ -10,7 +10,6 @@ import UIKit
 
 extension Notification.Name {
     static let changeColorNoti = Notification.Name("colorChangeNoti")
-    
 }
 
 class SecondViewController: UIViewController {
@@ -19,7 +18,6 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addObserver()
     }
     
     func addObserver() {
@@ -35,9 +33,9 @@ class SecondViewController: UIViewController {
     @objc func selectorSetting(_ sender: Notification) {
         //[Hashable: Any] => [String: UIColor]
         guard let typeChange = sender.userInfo as? [String: UIColor] else { return }
-       
         view.backgroundColor = typeChange["color"]
-           print("selectorSetting")
+        
+        print("selectorSetting")
     }
     
     deinit {

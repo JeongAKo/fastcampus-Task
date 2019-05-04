@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let notiCenter = NotificationCenter.default
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -22,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let firstVC = ViewController()
         let secondVC = SecondViewController()
         let thirdVC = ThirdViewController()
+        
         let tabBarController = UITabBarController()
         let navi = UINavigationController(rootViewController: thirdVC)
         
@@ -31,14 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         tabBarController.viewControllers = [firstVC, secondVC, navi]
         
+        secondVC.addObserver()  // 위에서 호출해주었기 때문에 firstVC에서 만들어주면 다른 친구라서 여기서 옵저버를 호출해주어야 한다.
+        
         window?.backgroundColor = .white
         window?.rootViewController = tabBarController   
         
         window?.makeKeyAndVisible()
-        
-        secondVC.viewDidLoad()
-        thirdVC.viewDidLoad()
-        
+
+        thirdVC.title = "Challenge"
         
         return true
        

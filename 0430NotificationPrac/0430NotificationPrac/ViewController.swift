@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let noti = NotificationCenter.default
-    
+
     let redLabel: UILabel = {
         let redLabel = UILabel()
         redLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -71,24 +71,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configuration()
         addSubView()
+        configuration()
         autoLayout()
+       
         button.addTarget(self, action: #selector(setColor(_:)), for: .touchUpInside)
         
     }
     
     
     @objc func setColor(_ sender: UIButton) {
-        print(redSlider.value)
-           print("버튼 눌렀지롱")
-        var red = CGFloat(redSlider.value)
-        var green = CGFloat(greenSlider.value)
-        var blue = CGFloat(blueSlider.value)
-        var alphaColor = CGFloat(alphaSlider.value)
         
+        print("버튼 눌렀지롱")
+        
+        let red = CGFloat(redSlider.value)
+        let green = CGFloat(greenSlider.value)
+        let blue = CGFloat(blueSlider.value)
+        let alphaColor = CGFloat(alphaSlider.value)
         let color: UIColor = .init(red: red, green: green, blue: blue, alpha: alphaColor)
-        
         noti.post(name: .changeColorNoti, object: sender, userInfo: ["color" : color])
     }
     

@@ -4,7 +4,6 @@
 //
 //  Created by Daisy on 03/05/2019.
 //  Copyright © 2019 고정아. All rights reserved.
-//
 
 import UIKit
 
@@ -21,29 +20,20 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-// textField.delegate = self  //resignFirstResponder() 를 써줄려면 델리게이트를 통해서 해주어야 한다. extension 하단에 해줘야함 지금은 불필요
-        
-        title = "Challenge"
+        textField.delegate = self  //resignFirstResponder() 를 써줄려면 델리게이트를 통해서 해주어야 한다. extension 하단에 해줘야함 지금은 불필요
+    
         addsubView()
-        autoLayout()
         configuration()
+        autoLayout()
+        fourthVC.addObserver()  //여기서 불러주기 때문에 뒤에서 불러줄 필요가 없다.(appDelegate에서 만들어 주지 않아서 여기서 사용 가능)
+        
     }
     
     func configuration() {
         textField.layer.borderColor = UIColor.blue.cgColor
         textField.layer.borderWidth =  1
-        textField.addTarget(self, action: #selector(goToNext(_:)), for: .editingDidEndOnExit)
     }
-    
-    
-    @objc func goToNext(_ sender: UITextField) {
-        print("gonext")
-        let text = textField.text ?? ""
-        noti.post(name: .textNoti, object: nil, userInfo: ["text":text])
-        navigationController?.pushViewController(fourthVC, animated: true)
-        
-    }
+ 
     func addsubView() {
         view.addSubview(textField)
     }
@@ -63,4 +53,18 @@ class ThirdViewController: UIViewController {
             ])
         
     }
+}
+
+extension ThirdViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let text = textField.text ?? ""
+        
+        noti.post(name: .textNoti, object: nil, userInfo: ["text": text])
+        navigationController?.pushViewController(fourthVC, animated: true)
+    
+        return true
+    
+    }
+
 }

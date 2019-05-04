@@ -25,10 +25,9 @@ class FourthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configuration()
         addsubView() //오토레이아웃 전에 해야 한다 *순서 주의*
         autoLayout()
-        configuration()
-        addObserver()
     }
     
     func configuration() {
@@ -52,7 +51,6 @@ class FourthViewController: UIViewController {
     
     func addsubView() {
     view.addSubview(custonLebel)
-        
     }
     
     func addObserver() {
@@ -70,14 +68,13 @@ class FourthViewController: UIViewController {
         guard let typeChange = sender.userInfo as? [String: String] else { return }
         custonLebel.text = typeChange["text"]
         
-//        view.backgroundColor = typeChange["text"]
         print("selectorSetting")
     }
     
     deinit {
         removeObserver()
     }
-    
+
     func removeObserver() {
         noti.removeObserver(self)
     }
