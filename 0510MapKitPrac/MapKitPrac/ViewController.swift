@@ -6,7 +6,7 @@
 //  Copyright © 2019 고정아. All rights reserved.
 //
 
-import CoreLocation
+
 import MapKit
 import UIKit
 
