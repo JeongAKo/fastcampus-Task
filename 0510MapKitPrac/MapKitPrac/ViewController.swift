@@ -40,7 +40,6 @@ final class ViewController: UIViewController {
         autoLayout()
         textFeild.delegate = self
         locationManager.delegate = self
-        //        mapView.showsUserLocation = true
         mapView.mapType = .standard
         
     }
