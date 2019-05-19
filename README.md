@@ -77,6 +77,22 @@
 ------
 
 - 2019/ 05/ 07_화: [과제]
-
 - UITouch:UIGestureRecognizer - UITouch 에서 이미지 터치 후 이동시 부자연스러운 동작 해결하기
 - GestureRecognizerAssign - Gesture recognizer를 활용하여 터치를 하였을 때 label에 터치 좌표값과 터치 횟수 출력하기
+
+------
+
+- 2019/ 05/ 10_금: [과제] MapKit
+
+------
+
+- 2019/ 05/ 14_화: [과제] UIViewAnimation
+
+------
+
+- 2019/ 05/ 15_수: [실습] SearchViewControllerExample
+
+------
+
+- 2019/ 05/ 16_목:[수업]  Animation활용하여 SlackWorkspace 따라하기
+
