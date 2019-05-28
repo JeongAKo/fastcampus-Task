@@ -32,9 +32,6 @@ class ThirdViewController: UIViewController {
     
      let wsNameTextField: UITextField = {
     let textField = UITextField()
-        let attrString = NSAttributedString(string: "Get a URL (Letter, Numbers, and dashes only)", attributes: [.foregroundColor: UIColor.darkText.withAlphaComponent(0.5)]
-        )
-        textField.attributedPlaceholder = attrString
         textField.font = UIFont.systemFont(ofSize: 22, weight: .light)
         textField.enablesReturnKeyAutomatically = true
         textField.borderStyle = .none
@@ -54,7 +51,7 @@ class ThirdViewController: UIViewController {
     private let slackLabel: UILabel = {
         let label = UILabel()
         label.text = ".Slcak.com"
-        label.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
         label.textColor = .gray
         return label
     }()
@@ -62,7 +59,7 @@ class ThirdViewController: UIViewController {
     private let bottomLabel: UILabel = {
         let label = UILabel()
         label.text = "This is the adress that you'll use to sign in to Slack"
-        label.font = UIFont.systemFont(ofSize: 10, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 12, weight: .light)
         return label
     }()
     
@@ -100,8 +97,14 @@ class ThirdViewController: UIViewController {
         floatingLabel.layout.leading(equalTo: wsNameTextField.leadingAnchor).trailing(equalTo: wsNameTextField.trailingAnchor).centerY(constant: -140)
         
         bottomLabel.layout.leading(equalTo: wsNameTextField.leadingAnchor).centerY(equalTo: wsNameTextField.bottomAnchor, constant: 100)
+        slackLabel.layout.centerY(equalTo: wsNameTextField.centerYAnchor)
         
-        slackLabel.layout.centerY(equalTo: wsNameTextField.centerYAnchor).leading(equalTo: wsNameTextField.leadingAnchor, constant: slackLabelConst.constant)
+        slackLabelConst = slackLabel.leadingAnchor.constraint(equalTo: wsNameTextField.leadingAnchor)
+        slackLabelConst.isActive = true
+        
+        guard let text = wsNameTextField.text else { return }
+        let textSize = (text as NSString).size(withAttributes: [.font: wsNameTextField.font!])
+        slackLabelConst.constant = textSize.width + 8
       
         
         
@@ -114,7 +117,6 @@ class ThirdViewController: UIViewController {
     @objc func didTapNextButton(_ sender: UIButton) {
         guard nextButton.isSelected, let text = wsNameTextField.text else{return vibration()}
  
-        
     }
     
     
