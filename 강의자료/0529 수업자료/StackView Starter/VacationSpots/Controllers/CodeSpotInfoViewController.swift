@@ -12,6 +12,15 @@ class CodeSpotInfoViewController: UIViewController {
 
     var vacationSpot: VacationSpot!
     
+    var shouldHideWeatherInfoSetting: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "shouldHideWeatherInfo")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "shouldHideWeatherInfo")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -105,5 +114,19 @@ class CodeSpotInfoViewController: UIViewController {
         hideAndShowButton.firstBaselineAnchor.constraint(equalTo: weather.firstBaselineAnchor).isActive = true
         hideAndShowButton.leadingAnchor.constraint(equalTo: weather.trailingAnchor, constant: 8).isActive = true
         
+        
+        whyVisitLable.text = vacationSpot.whyVisit
+        whatToSeeLabel.text = vacationSpot.whatToSee
+        weatherLable.text = vacationSpot.weatherInfo
+        rating.text = String(repeating: "🌟", count: vacationSpot.userRating)
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
+    
+    
 }
