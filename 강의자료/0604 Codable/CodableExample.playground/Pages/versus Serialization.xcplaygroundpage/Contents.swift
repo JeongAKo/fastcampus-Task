@@ -109,20 +109,22 @@ let jsonDictData = """
 // JSONSerialization
 
 if let foundationObject = try JSONSerialization.jsonObject(with: jsonDictData) as? [String:[[String:Any]]] {
-    let name = foundationObject["data"].map{ $0.map{ $0["name"]}}
-    
-    
-    print(name)
+    let final = foundationObject["data"].map{ $0.map{ Dog(name: $0["name"] as! String, age: $0["age"] as! Int)}}
+    print(final!.compactMap{$0})
 } else {
     print("fail")
 }
 
-
 // JSONDecoder
 
-
-
-
+if let decodedDict = try? jsonDecoder.decode([String: [Dog]].self, from: jsonDictData) {
+    if let dogArray = decodedDict["data"] {
+        dogArray.forEach{ print($0)}
+        
+    } else {
+        print("fail")
+    }
+}
 
 
 
@@ -184,16 +186,16 @@ print("\n---------- [ Dictionary ] ----------")
 // JSONSerialization
 if let jsonObject = try? JSONSerialization.jsonObject(with: jsonDictData) as? [String: Any],
   let data = jsonObject["data"] as? [[String: Any]] {
-  
+
   data
     .compactMap { Dog(from: $0) }
     .forEach { print("Serialization :", $0) }
 }
 
 // JSONDecoder
-if let dogs = try? JSONDecoder().decode([String: [Dog]].self, from: jsonDictData) {
-  dogs.values.forEach { $0.forEach { print("Decoder :", $0) } }
-}
+//if let dogs = try? JSONDecoder().decode([String: [Dog]].self, from: jsonDictData) {
+//  dogs.values.forEach { $0.forEach { print("Decoder :", $0) } }
+//}
 
 
 
