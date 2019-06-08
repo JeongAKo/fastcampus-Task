@@ -154,61 +154,74 @@ if let report = try? JSONDecoder().decode([Person].self, from: jsonMovie) {
  - full_name, description, stargazers_count, forks_count, html_url
  ***************************************************/
 
-struct Repositories {
+print("\n---------- [ 4번 문제 (URL 이용) ] ----------\n")
+
+struct Repositories: Decodable {
     let items: [Item]
     
-    struct Item {
+    enum CodingKeys: String, CodingKey {
+        case items
+    }
+    
+    struct Item: Decodable {
         let fullName: String
         let description: String?
         let stargazersCount: Int
         let forksCount: Int
-        let owner: [Owner]
+        let htmlURL: String
         
         private enum CodingKeys: String, CodingKey {
             case fullName = "full_name"
             case description
             case stargazersCount = "stargazers_count"
             case forksCount = "forks_count"
-            case owner
-        }
-    }
-    
-    struct Owner {
-        let htmlURL: String
-        
-        private enum CodingKeys: String, CodingKey {
             case htmlURL = "html_url"
         }
     }
 }
 
-extension Repositories.Item: Decodable {
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        fullName = try values.decode(String.self, forKey: .fullName)
-        description = try values.decode(String.self, forKey: .description)
-        stargazersCount = try values.decode(Int.self, forKey: .stargazersCount)
-        forksCount = try values.decode(Int.self, forKey: .forksCount)
-        owner = try values.decode([Owner].self, forKey: .owner)
-        
-    }
-}
+//extension Repositories.Item: Decodable {
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        fullName = try values.decode(String.self, forKey: .fullName)
+//        description = try values.decode(String.self, forKey: .description)
+//        stargazersCount = try values.decode(Int.self, forKey: .stargazersCount)
+//        forksCount = try values.decode(Int.self, forKey: .forksCount)
+//        htmlURL = try values.decode(String.self, forKey: .htmlURL)
+//
+//    }
+//}
 
-extension Repositories.Item.Owner: Decodable {
-    init(from decoder: Decoder) throws {
-        let url = try decoder.container(keyedBy: CodingKeys.self)
-        htmlURL = try url.decoder(String.self, forKey: .htmlURL)
-    }
-}
-
-
+//extension Repositories.Item: Decodable {
+//    init(from decoder: Decoder) throws {
+//        let url = try decoder.container(keyedBy: CodingKeys.self)
+//        htmlURL = try url.decode(String.self, forKey: .htmlURL)
+//    }
+//}
 
 
 func fetchGitHubRepositories() {
   let urlString = "https://api.github.com/search/repositories?q=user:JeongAKo"
   let url = URL(string: urlString)!
-
+    
+    
+    
+    let dataTask = URLSession.shared.dataTask(with: url) { (data, reponse, error) in
+        guard error == nil else { return print(error!)}
+        guard let reponse = reponse as? HTTPURLResponse,
+        200..<400 ~= reponse.statusCode
+            else { return print("Status Code od not vaild")}
+        guard let data = data,
+        let jsonObject = try? JSONDecoder().decode(Repositories.self, from: data)
+            else { return print("No data")}
+        for repository in jsonObject.items {
+            print(repository)
+            print("= = = = = = = = = =")
+        }
+    }
+    dataTask.resume()
 }
+
 
 fetchGitHubRepositories()
 
