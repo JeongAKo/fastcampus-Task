@@ -159,7 +159,7 @@ extension Dog1 {
 print("---------- [ Basic ] ----------")
 // JSONSerialization
 if let jsonObject = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any] {
-  if let dog = Dog(from: jsonObject) {
+  if let dog = Dog1(from: jsonObject) {
     print("Serialization :", dog)
   }
 }
@@ -177,7 +177,7 @@ print("\n---------- [ Array ] ----------")
 if let jsonObjects = try? JSONSerialization.jsonObject(with: jsonArrData) as? [[String: Any]] {
   
   jsonObjects
-    .compactMap { Dog(from: $0) }
+    .compactMap { Dog1(from: $0) }
     .forEach { print("Serialization :", $0) }
 }
 
@@ -196,7 +196,7 @@ if let jsonObject = try? JSONSerialization.jsonObject(with: jsonDictData) as? [S
   let data = jsonObject["data"] as? [[String: Any]] {
 
   data
-    .compactMap { Dog(from: $0) }
+    .compactMap { Dog1(from: $0) }
     .forEach { print("Serialization :", $0) }
 }
 
