@@ -135,7 +135,15 @@ if let decodedDict = try? jsonDecoder.decode([String: [Dog]].self, from: jsonDic
  */
 print("\n---------- [ Answer ] ----------\n")
 
-extension Dog {
+import Foundation
+
+struct Dog1: Codable {
+    let name: String
+    let age: Int
+}
+
+
+extension Dog1 {
   init?(from json: [String: Any]) {
     guard let name = json["name"] as? String,
       let age = json["age"] as? Int
