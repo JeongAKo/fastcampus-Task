@@ -10,20 +10,31 @@ import UIKit
 
 class TopView: UIView {
     
+    // 시간설정
+//    let dataFormatta: DateFormatter = {
+//        let format = DateFormatter()
+//        format.locale = Locale(identifier: "ko_kr")
+//        format.dateFormat = "a:mm"
+//    let time = format.date(from: )
+//        return format
+//    }()
+    
     let locationLabel = UILabel()
     let timeNow = UILabel()
     let refreshButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("↻", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        
+    
         return button
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         addsubView()
+        callLocationInfo()
         configure()
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,22 +49,18 @@ class TopView: UIView {
     
     }
     
+
+    
     override func layoutSubviews() {
-        print("layoutSubviews", frame.width)
         locationLabel.center.x = center.x
         timeNow.center.x = center.x
-        
-        print("frame",frame)
-        print("center", center)
-        
     }
     
     private func configure() {
         
-        locationLabel.text = "여기에 장소 들어올꺼야"
+        locationLabel.text = ""
         locationLabel.frame = CGRect(x: 0 , y: 0, width: 200, height: 50)
         locationLabel.center.y = self.frame.height + 20
-        
         
         locationLabel.textAlignment = .center
         
@@ -64,10 +71,19 @@ class TopView: UIView {
         
         refreshButton.addTarget(self, action: #selector(didtapButton(_:)), for: .touchUpInside)
         refreshButton.center.x = frame.width/2
-        print(refreshButton.frame)
         refreshButton.frame =  CGRect(x: 0, y: 0, width: 200, height: 50)
     
         autolayouts()
+    }
+    
+    private func callLocationInfo() {
+        WeatherApiControl.shared.nowTempInfo { (currentLocation, localInfo, sky) in
+            DispatchQueue.main.async {
+        
+                self.locationLabel.text = (localInfo.city ?? "") + " " + (localInfo.county ?? "")
+                
+            }
+        }
     }
     
     private func autolayouts() {
