@@ -36,18 +36,24 @@ class WeatherViewController: UIViewController {
         view.addSubview(tableView)
         
         imageView.image = UIImage(named: "sunny")
-        
         topView.backgroundColor = .clear
- 
+        topView.refreshButton.addTarget(self, action: #selector(didtapButton(_:)), for: .touchUpInside)
         hearderView.backgroundColor = .clear
         hearderView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 120)
         tableView.separatorStyle = .none
+        tableView.allowsSelection = false // 셀 클릭시 색상변경 안되게
         tableView.tableHeaderView = hearderView
         tableView.backgroundColor = .clear
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
         tableView.rowHeight = 70
+    }
+    
+    @objc func didtapButton(_ sender: UIButton) {
+        getWeatherInfo()
+        print("Button Tapped")
+        
     }
     
     private func autoLayout() {
@@ -74,11 +80,7 @@ class WeatherViewController: UIViewController {
     
     private func getWeatherInfo() {
         WeatherApiControl.shared.timeIntervalThreeHours { weatherData in
-            print("getWeatherInfo")
             self.forecastThreedays = weatherData
-            
-            
-            
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -108,7 +110,7 @@ extension WeatherViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // 이걸로 뒷배경 움직이게 하는고
+        // 뒷배경 움직이게
     }
 
 }

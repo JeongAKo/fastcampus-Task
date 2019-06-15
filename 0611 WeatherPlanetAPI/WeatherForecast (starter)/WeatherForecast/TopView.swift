@@ -11,13 +11,14 @@ import UIKit
 class TopView: UIView {
     
     // 시간설정
-//    let dataFormatta: DateFormatter = {
-//        let format = DateFormatter()
-//        format.locale = Locale(identifier: "ko_kr")
-//        format.dateFormat = "a:mm"
-//    let time = format.date(from: )
-//        return format
-//    }()
+    private var now: String {
+        get {
+            let df = DateFormatter()
+            df.locale = Locale(identifier: "ko")
+            df.dateFormat = "a h:mm"
+            return df.string(from: Date())
+        }
+    }
     
     let locationLabel = UILabel()
     let timeNow = UILabel()
@@ -64,12 +65,11 @@ class TopView: UIView {
         
         locationLabel.textAlignment = .center
         
-        timeNow.text = "파리의 시간을 살아가는중"
+        timeNow.text = now
         timeNow.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
         timeNow.textAlignment = .center
         timeNow.center.y = self.frame.height + 42
         
-        refreshButton.addTarget(self, action: #selector(didtapButton(_:)), for: .touchUpInside)
         refreshButton.center.x = frame.width/2
         refreshButton.frame =  CGRect(x: 0, y: 0, width: 200, height: 50)
     
@@ -79,9 +79,12 @@ class TopView: UIView {
     private func callLocationInfo() {
         WeatherApiControl.shared.nowTempInfo { (currentLocation, localInfo, sky) in
             DispatchQueue.main.async {
-        
-                self.locationLabel.text = (localInfo.city ?? "") + " " + (localInfo.county ?? "")
                 
+                let city = (localInfo.city ?? "") + " "
+                let county = (localInfo.county ?? "") + " "
+                let village = (localInfo.village ?? "") + " "
+                self.locationLabel.text = city + county + village
+//                self.locationLabel.text = (localInfo.city ?? "") + " " + (localInfo.county ?? "") + " " + (localInfo.village ?? "") → 이렇게 하면 복잡해서 나눠서 써라. 3줄 넘어가면 오류난다
             }
         }
     }
@@ -94,10 +97,4 @@ class TopView: UIView {
         refreshButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         refreshButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
-    
-    @objc func didtapButton(_ sender: UIButton) {
-        print("Button tapped")
-    }
-    
-    
 }

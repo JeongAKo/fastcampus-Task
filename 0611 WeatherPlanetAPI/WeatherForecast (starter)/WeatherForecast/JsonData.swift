@@ -13,27 +13,37 @@ struct CurrentWeather {
     let tmax: String?
     let tmin: String?
     
+    let dataFommatta = DateFormatter()
+    
+
+
+    // FIXME: - init 할때 datafomatta String 으로 뒤에 하나 떼기!
     init?(from json: [String : Any]) {
+        
         guard let tc = json["tc"] as? String,
             let tmax = json["tmax"] as? String,
             let tmin = json["tmin"] as? String
             else { return nil }
-        self.tc = tc
-        self.tmax = tmax
-        self.tmin = tmin
+        
+        self.tc = String(tc.dropLast(1))
+        self.tmax = String(tmax.dropLast(1))
+        self.tmin = String(tmin.dropLast(1))
     }
 }
 
 struct LocalInfo {
     let city: String?
     let county: String?
+    let village: String?
     
     init?(from json: [String: Any]) {
         guard let city = json["city"] as? String,
-            let county = json["county"] as? String
+            let county = json["county"] as? String,
+            let village = json["village"] as? String
             else {return nil}
         self.city = city
         self.county = county
+        self.village = village
     }
 }
 

@@ -42,7 +42,7 @@ class WeatherApiControl {
             guard let skyInfo = SkyINfo(from: sky)else {return print("skyInfo error")}
             
 //            print("currentWeather: ", currentWeather)
-//            print("localInfo: ", localInfo)
+            print("localInfo: ", localInfo)
 //            print("sky: ", sky)
             
             completionHandler(currentWeather, localInfo, skyInfo)

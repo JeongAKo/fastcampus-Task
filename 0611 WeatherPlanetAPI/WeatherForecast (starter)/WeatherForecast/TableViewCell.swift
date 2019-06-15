@@ -21,7 +21,7 @@ class TableViewCell: UITableViewCell {
     
     var weatherData: (String, String, Date)? {
         didSet {
-            temperature.text = weatherData!.0
+            temperature.text = String((weatherData!.0).dropLast(3)) + "˚"
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "M:dd (E)"
