@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='Contents'/>
+        <page name='Hello, world!'/>
+        <page name='Constants and Variables'/>
+        <page name='Type Annotation &amp; Type Inference'/>
+        <page name='Literals &amp; Types'/>
+        <page name='Type Conversion'/>
+        <page name='Basic Operators'/>
+        <page name='Function'/>
+    </pages>
+</playground>
