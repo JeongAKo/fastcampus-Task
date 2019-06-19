@@ -26,9 +26,12 @@ type(of: threeValues)
 
 threeValues
 
-threeValues.0 = 5
-threeValues
+var reversedThreeValues: (String, Double, Int)
+reversedThreeValues.0 = threeValues.2
+reversedThreeValues.1 = threeValues.1
+reversedThreeValues.2 = threeValues.0
 
+reversedThreeValues
 
 /*:
  ## Decomposition
@@ -144,13 +147,13 @@ default:
 let fruits = ["A": "Apple", "B": "Banana", "C": "Cherry"]
 
 for (key, value) in fruits {
-  print(key, value)
+//  print(key, value)
 }
 
 for element in fruits {
-  // 어떤 식으로 출력해야 할까요?
-
- print(element.key, element.value)
+    
+    print(element)
+    print(element.key, element.value)
     
 }
 

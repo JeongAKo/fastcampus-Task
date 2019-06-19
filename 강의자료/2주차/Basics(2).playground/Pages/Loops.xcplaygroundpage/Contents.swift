@@ -26,8 +26,7 @@ for index in 1...4 {
   print("\(index) times 5 is \(index * 5)")
 }
 
-// Wildcard Pattern * 와일드카드 패턴!!!
-
+// ↓ Wildcard Pattern(와일드카드 패턴)  _사용하여 반복만 하고싶을때
 for _ in 0...3 {
   print("hello")
 }

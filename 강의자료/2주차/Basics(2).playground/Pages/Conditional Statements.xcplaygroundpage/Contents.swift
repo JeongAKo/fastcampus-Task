@@ -191,6 +191,19 @@ default:
  - 아래의 if - else if - else 문을 switch 문으로 바꿔보세요.
  ---
  */
+var temp = 100
+
+switch temp {
+case ...32:
+    print("It's very cold. Consider wearing a scarf.")
+case 33...86 :
+    print("It's really warm. Don't forget to wear sunscreen.")
+default:
+    print("It's not that cold. Wear a t-shirt.")
+}
+
+
+
 /***************************************************
  if temperatureInFahrenheit <= 32 {
  print("It's very cold. Consider wearing a scarf.")
@@ -217,7 +230,7 @@ default:
 
 // Compound Cases
 
-let someCharacter: Character = "e"
+let someCharacter: Character = "!"
 
 switch someCharacter {
 case "a", "e", "i", "o", "u":
@@ -233,7 +246,7 @@ default:
 
 // value binding
 
-let somePoint = (0, 11)
+let somePoint = (0, 8)
 
 switch somePoint {
 case (let distance, 0), (0, let distance):
@@ -245,7 +258,8 @@ default:
 
 // where clause
 
-let anotherPoint = (1, -1)
+let anotherPoint = (1, -2)
+type(of: anotherPoint)
 switch anotherPoint {
 case let (x, y) where x == y:
   print("(\(x), \(y)) is on the line x == y")
@@ -259,7 +273,7 @@ case let (x, y):
 // fallthrough
 
 print("\n---------- [ fallthrough ] ----------\n")
-let integerToDescribe = 5
+let integerToDescribe = 6
 var description = "The number \(integerToDescribe) is"
 
 switch integerToDescribe {
@@ -298,11 +312,14 @@ func mesage(numn:Int) {
 }
 mesage(numn: 110)
 
-/*
+
 let age = 23
-if age >=1 , age <= 100
-print "update"
-*/
+ if age >= 1 , age <= 100 {
+print("update")
+ } else {
+    print("종료")
+}
+
 /*:
  ---
  ## Early Exit
@@ -333,17 +350,15 @@ print "update"
 //  }
 //}
 
-//func update(age: Int) {
-//  guard 1...100 ~= age else { return }
-//  print("Update")
-//}
-//
+func update(age: Int) {
+  guard 1...100 ~= age else { return }
+  print("Update")
+}
+
 //update(age: -1)
 //update(age: 2)
-//update(age: 100)
+update(age: 100)
 
-
-// Exercise 문제 풀기
 
 
 /*:
@@ -371,29 +386,11 @@ switch even {
 case let x where x % 2 == 0:
   print("\(x)는 짝수")
     
+case let y where y % 2 == 1 :
+    print("\(y)는 홀수")
 default:
-    print("\(x)는 홀수")
-    
+    print("짝수도 홀수도 아니다")
 }
-
-
-
-//
-//func which(num9:Int) -> String{
-//    switch num9 {
-//    case let X where X % 2 == 1 :
-//        return "\(X)는 홀수입니다"
-//    default:
-//        return "\(X)는 짝수입니다"
-//    }
-//
-//}
-//print(which(num9: 5))
-//
-
-
-
-
 
 
 //: [Next](@next)

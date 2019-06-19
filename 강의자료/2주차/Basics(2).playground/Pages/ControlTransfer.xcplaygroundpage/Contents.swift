@@ -20,9 +20,6 @@ for num in 0...15 {
   print(num)
 }
 
-// 결과값은?
-
-
 
 print("\n---------- [ return ] ----------\n") //리턴은 함수내에서 쓰인다 / 반환하면 함수가 종료된다.
 
@@ -44,15 +41,11 @@ func returnFunction() -> Int {
   for _ in 1...100 {
     sum += 20
     return sum
-//    return 5
   }
   return 7
 }
 
 print(returnFunction())
-
-// 결과값은?
-
 
 
 for i in 1...100 {
@@ -66,6 +59,7 @@ for i in 1...100 {
 //}
 
 // 결과값은?
+// 1
 
 
 print("\n---------- [ break 1 ] ----------\n")
@@ -113,7 +107,21 @@ OUTER: for i in 0 ... 3 {
   print("outer \(i)")
 }
 
-// 결과값은?
+// for 문 3개 만들어서 center에 break 주기 (if 문 걸어서 2일 경우)
 
+print("=======[여기다~!]========")
+
+OUTER: for i in 0...3 {
+    CENTER: for j in 0...3 {
+        INNER: for z in 0...3 {
+            if j == 2 {
+            break OUTER
+            }
+            print("inner\(z)")
+        }
+        print("center\(j)")
+    }
+    print("outer\(i)")
+}
 
 //: [Next](@next)
