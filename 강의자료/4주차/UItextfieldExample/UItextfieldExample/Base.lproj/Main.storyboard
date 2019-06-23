@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UItextfieldExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="0과 9사이의 숫자를 입력하세요" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DTH-Mt-GzA">
+                                <rect key="frame" x="44" y="150" width="303" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="actionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="A9B-8x-5aP"/>
+                                    <action selector="didAndOnExit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="cSl-Oh-f14"/>
+                                    <action selector="didBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="oSs-oO-RRd"/>
+                                    <action selector="didChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="e8T-jY-dQr"/>
+                                    <action selector="didEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="6b9-zk-0Uh"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="0과 9사이의 숫자를 입력하세요" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PwO-fB-132">
+                                <rect key="frame" x="44" y="194" width="303" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="actionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="LXp-Es-QId"/>
+                                    <action selector="didAndOnExit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="li2-5V-zZa"/>
+                                    <action selector="didBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="AQb-Ew-DoN"/>
+                                    <action selector="didChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="k0T-9B-9ao"/>
+                                    <action selector="didEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="uqZ-dR-anO"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="0과 9사이의 숫자를 입력하세요" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gas-e4-FzY">
+                                <rect key="frame" x="44" y="238" width="303" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="actionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="jWy-TR-TvD"/>
+                                    <action selector="didAndOnExit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="0EQ-mA-Hbe"/>
+                                    <action selector="didBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="2Z3-Ej-Cq2"/>
+                                    <action selector="didChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="FpA-st-dtp"/>
+                                    <action selector="didEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Xh2-UK-7Zk"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gH-O4-Jnf">
+                                <rect key="frame" x="187" y="359" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="signin"/>
+                                <connections>
+                                    <action selector="signin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zRY-zA-40i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstTextField" destination="DTH-Mt-GzA" id="GND-a1-MPh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="117.85714285714285"/>
+        </scene>
+    </scenes>
+</document>
