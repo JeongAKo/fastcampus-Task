@@ -1,0 +1,30 @@
+**********
+[ 2번 문제 ]
+**********
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Robert",
+      "last_name": "Schwartz",
+      "email": "rob23@gmail.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Lucy",
+      "last_name": "Ballmer",
+      "email": "lucyb56@gmail.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Anna",
+      "last_name": "Smith",
+      "email": "annasmith23@gmail.com"
+    },
+  ]
+}
+
+
+  filterData.map{
+                User.init(id: $0["id"] as! [Int], firsrName: $0["first_name"] as! [String], lastName: $0["last_name"] as! [String], email: $0["email"] as! [String])
+            }
