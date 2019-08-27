@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1572",
+    "rank": "1",
+    "name": "신한 Hi-Point 카드",
+    "image_url": "https://cdn.banksalad.com/cards/shinhan_1198313.png",
+    "image_orientaion": "landscape"},
+  {
+    "id": "2928",
+    "rank": "2",
+    "name": "삼성카드 taptap O",
+    "image_url": "https://cdn.banksalad.com/cards/samsung_2928.png",
+    "image_orientaion": "landscape"},
+  {
+    "id": "3578",
+    "rank": "3",
+    "name": "신한카드 Deep Dream",
+    "image_url": "https://cdn.banksalad.com/cards/3578.png",
+    "image_orientaion": "landscape"},
+  {
+    "id": "3350",
+    "rank": "4",
+    "name": "청춘대로 톡톡카드",
+    "image_url": "https://cdn.banksalad.com/cards/kb_3350.png",
+    "image_orientaion": "landscape"},
+  {
+    "id": "3624",
+    "rank": "5",
+    "name": "LIKIT FUN 카드",
+    "image_url": "https://cdn.banksalad.com/entities/etc/1519182643210-3624.png",
+    "image_orientaion": "portrait"},
+  {
+    "id": "2804",
+    "rank": "6",
+    "name": "삼성카드 & MILEAGE PLATINUM(스카이패스)",
+    "image_url": "https://cdn.banksalad.com/cards/samsung_2804.png",
+    "image_orientaion": "landscape"},
+  {
+    "id": "3422",
+    "rank": "7",
+    "name": "아시아나 신한카드 Air 1.5",
+    "image_url": "https://cdn.banksalad.com/cards/shinhan_3422.png",
+    "image_orientaion": "landscape"},
+  {
+    "id": "1897",
+    "rank": "8",
+    "name": "신한카드 B.Big(삑)",
+    "image_url": "https://cdn.banksalad.com/cards/shinhan_1250870.png",
+    "image_orientaion": "landscape"},
+  {
+    "id": "22",
+    "rank": "9",
+    "name": "씨티 클리어 카드",
+    "image_url": "https://cdn.banksalad.com/entities/etc/1537259963411-22.png",
+    "image_orientaion": "landscape"},
+  {
+    "id": "3640",
+    "rank": "10",
+    "name": "I'm WONDERFUL",
+    "image_url": "https://cdn.banksalad.com/entities/etc/1522737042797-3640.png",
+    "image_orientaion": "landscape"}
+]
